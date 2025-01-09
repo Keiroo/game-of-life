@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmgwr2qiykwd2"]
+
+[ext_resource type="Texture2D" uid="uid://bu3mlf216uq68" path="res://sprites/tileset32x16.png" id="1_j7h14"]
+[ext_resource type="Script" path="res://scripts/tile_map_layer.gd" id="2_nln7p"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkw30"]
+texture = ExtResource("1_j7h14")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vn4km"]
+sources/0 = SubResource("TileSetAtlasSource_jkw30")
+
+[node name="game" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_vn4km")
+script = ExtResource("2_nln7p")
+width = 64
+height = 36
+
+[node name="Camera2D" type="Camera2D" parent="TileMapLayer"]
+unique_name_in_owner = true
